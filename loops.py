@@ -5,13 +5,24 @@ for i in range(1, 11):
         print("\t", j)
 
 
-def print_cinema():
-    for i in range(16):
+def print_cinema(rows=16,columns=5):
+    for i in range(rows+1):
         print("Row %d:\t" % i, end=' ')
-        for i in range(21):
+        for i in range(columns+1):
             print("%d:\t" % i, end=' ')
+
+            is_vip_seat = (5 <= i <=10) and (10 <= j <= 15)
+            if is_vip_seat:
+                print('[%5s]' % j, end= '\t')
+            else:
+                print('%5s' % j, end='\t')
+
         print()
 
+
+print_cinema(15,20)
+print_cinema(3, 4)
+print_cinema()
 
 
 def count_table(rows = 10,columns = 10):
